@@ -26,7 +26,7 @@
  -->
 
           <li class="active">
-          <a href="<?php echo base_url(); ?>Home/"">
+          <a href="{{route('admin_home')}} ">
             <i class="fa fa-tachometer" aria-hidden="true"></i> <span>Dashboard</span>
             <span class="pull-right-container">
         <!--       <small class="label pull-right bg-green">new</small> -->
@@ -35,7 +35,7 @@
         </li>
 
         <li>
-          <a href="<?php echo base_url(); ?>Home/orders">
+          <a href="{{route('admin_home')}}">
            <i class="fa fa-book" aria-hidden="true"></i><span>Orders</span>
             <span class="pull-right-container">
         <!--       <small class="label pull-right bg-green">new</small> -->
@@ -44,7 +44,7 @@
         </li>
 
         <li>
-         <a href="<?php echo base_url(); ?>Home/users ">
+         <a href="{{route('admin_home')}}">
           <i class="fa fa-users" aria-hidden="true"></i> <span>Users</span>
             <span class="pull-right-container">
         <!--       <small class="label pull-right bg-green">new</small> -->
@@ -53,7 +53,7 @@
         </li>
 
         <li>
-          <a href="<?php echo base_url(); ?>Home/locations">
+          <a href="{{route('admin_home')}}">
             <i class="fa fa-map-marker" aria-hidden="true"></i><span>Locations</span>
             <span class="pull-right-container">
         <!--       <small class="label pull-right bg-green">new</small> -->
@@ -63,7 +63,7 @@
 
 
         <li>
-          <a href="<?php echo base_url(); ?>Home/food_items">
+          <a href="{{route('admin_home')}}">
           <i class="fa fa-cutlery" aria-hidden="true"></i><span>Food Items</span>
             <span class="pull-right-container">
         <!--       <small class="label pull-right bg-green">new</small> -->
@@ -72,20 +72,20 @@
         </li>
 
       <li class="treeview">
-          <a href="#">
+          <a href="{{route('admin_home')}}">
             <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Report</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>Home/report "><i class="fa fa-circle-o"></i> Daily Report</a></li>
-            <li><a href="<?php echo base_url(); ?>Home/monthly_report "><i class="fa fa-circle-o"></i> Monthly Report</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Daily Report</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Monthly Report</a></li>
           </ul>
         </li>
 
         <li>
-          <a href="<?php echo base_url(); ?>Home/banner ">
+          <a href="{{route('admin_home')}}">
             <i class="fa fa-picture-o" aria-hidden="true"></i> <span>Banner</span>
             <span class="pull-right-container">
         <!--       <small class="label pull-right bg-green">new</small> -->

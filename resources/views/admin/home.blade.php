@@ -9,28 +9,28 @@
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
- <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
- <link rel="icon" href="<?php echo base_url() ?>images/favicon.png" type="image/gif" sizes="16x16">
+ <link href="/css/style.css" rel="stylesheet">
+ <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/Ionicons/ionicons.min.css">
+  <link rel="stylesheet" href="/css/Ionicons/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/_all-skins.css">
+  <link rel="stylesheet" href="/css/_all-skins.css">
   <!-- Morris chart -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/morris.css">
+  <link rel="stylesheet" href="/css/morris.css">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery-jvectormap.css">
+  <link rel="stylesheet" href="/css/jquery-jvectormap.css">
   <!-- Date Picker -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
  
   <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="/css/bootstrap3-wysihtml5.min.css">
 
 
   <!-- Google Font -->
@@ -41,14 +41,14 @@
 
   <header class="white main-header">
     <!-- Logo -->
-    <a href="<?php echo base_url() ?>Home/index" class="logo logo-bkg-color">
+    <a href="<?php //echo base_url() ?>Home/index" class="logo logo-bkg-color">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini">
-          <img src="<?php echo base_url();  ?>images/favicon.png">  
+          <img src="<?php //echo base_url();  ?>/images/favicon.png">  
       </span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">
-          <img src="<?php echo base_url(); ?>images/web_logo.png">
+          <img src="<?php //echo base_url(); ?>/images/web_logo.png">
       </span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -74,7 +74,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url(); ?>images/maildontopen.png" class="img-circle" alt="User Image">
+                        <img src="<?php //echo base_url(); ?>images/maildontopen.png" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Test Mail
@@ -87,7 +87,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url(); ?>images/maildontopen.png" class="img-circle" alt="User Image">
+                        <img src="<?php //echo base_url(); ?>images/maildontopen.png" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                        Test mail
@@ -99,7 +99,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url(); ?>images/maildontopen.png" class="img-circle" alt="User Image">
+                        <img src="<?php //echo base_url(); ?>images/maildontopen.png" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Test mail
@@ -111,7 +111,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url(); ?>images/maildontopen.png" class="img-circle" alt="User Image">
+                        <img src="<?php //echo base_url(); ?>images/maildontopen.png" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Test mail 
@@ -123,7 +123,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url(); ?>images/maildontopen.png" class="img-circle" alt="User Image">
+                        <img src="<?php //echo base_url(); ?>images/maildontopen.png" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Test mail
@@ -180,21 +180,16 @@
           </li>
 
 
-
-
-
-
-
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url(); ?>images/profile.png" class="user-image" alt="User Image">
+              <img src="<?php //echo base_url(); ?>images/profile.png" class="user-image" alt="User Image">
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url(); ?>images/profile.png" class="img-circle" alt="User Image">
+                <img src="<?php //echo base_url(); ?>images/profile.png" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer
@@ -222,7 +217,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo base_url(); ?>Admin/index" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php //echo base_url(); ?>Admin/index" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -239,14 +234,10 @@
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
 
-
-
   <?php 
-  require("menu.php");
+  // require("menu.php");
    ?>
-
-
-
+       @include('admin/menu')
 
     <!-- /.sidebar -->
   </aside>
@@ -280,7 +271,7 @@
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="<?php echo base_url() ?>Home/orders" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php //echo base_url() ?>Home/orders" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -310,7 +301,7 @@
             <div class="icon">
              <i class="fa fa-users" aria-hidden="true"></i>
             </div>
-            <a href="<?php echo base_url() ?>Home/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php //echo base_url() ?>Home/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -350,12 +341,6 @@
             </div>
           </div>
           <!-- /.nav-tabs-custom -->
-
-
-
-
-
-
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
@@ -471,38 +456,38 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="<?php echo base_url(); ?>assets/js/dist/jquery.min.js"></script>
+<script src="/js/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="<?php echo base_url(); ?>assets/js/dist/jquery-ui.min.js"></script>
+<script src="/js/dist/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url();?>assets/js/dist/js/bootstrap.min.js"></script>
+<script src="/js/dist/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
-<script src="<?php echo base_url();?>assets/js/raphael.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/morris.min.js"></script>
+<script src="/js/raphael.min.js"></script>
+<script src="/js/morris.min.js"></script>
 <!-- Sparkline -->
-<script src="<?php echo base_url();?>assets/js/jquery.sparkline.min.js"></script>
+<script src="/js/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
-<script src="<?php echo base_url();?>assets/js/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery-jvectormap-world-mill-en.js"></script>
+<script src="/js/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="/js/jquery-jvectormap-world-mill-en.js"></script>
 <!-- jQuery Knob Chart -->
-<script src="<?php echo base_url();?>assets/js/jquery.knob.min.js"></script>
+<script src="/js/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
-<script src="<?php echo base_url();?>assets/js/moment.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/daterangepicker.js"></script>
+<script src="/js/moment.min.js"></script>
+<script src="/js/daterangepicker.js"></script>
 <!-- datepicker -->
-<script src="<?php echo base_url();?>assets/js/bootstrap-datepicker.min.js"></script>
+<script src="/js/bootstrap-datepicker.min.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="<?php echo base_url();?>assets/js/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="/js/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
-<script src="<?php echo base_url();?>assets/js/jquery.slimscroll.min.js"></script>
+<script src="/js/jquery.slimscroll.min.js"></script>
 
-<script src="<?php echo base_url();?>assets/js/adminlte.min.js"></script>
+<script src="/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url();?>assets/js/dashboard.js"></script>
+<script src="/js/dashboard.js"></script>
 
 </body>
 </html>

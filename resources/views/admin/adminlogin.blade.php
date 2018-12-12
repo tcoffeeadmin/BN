@@ -1,5 +1,10 @@
+
+
 @extends('layouts.app')
+
 @section('content')
+
+
 
 <!DOCTYPE html>
 <html>
@@ -13,15 +18,15 @@
   <link rel="icon" >
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="{{ asset('/css/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet"  href="/css/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('/css/font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet"  href="/css/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="{{ asset('/css/Ionicons/css/ionicons.min.css') }}">
+  <link rel="stylesheet"  href="/css/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('/css/AdminLTE.min.css') }}">
+  <link rel="stylesheet"  href="/css/AdminLTE.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="{{ asset('/css/square/blue.css') }}">
+  <link rel="stylesheet"  href="/css/square/blue.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,7 +47,8 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form name="form1" id="id_form" method="post" action="Admin/login">
+
+    <form name="form1" id="id_form" method="post" action="">
       <div class="form-group has-feedback">
         <input type="text" name="username" id="id_username" class="form-control" placeholder="Username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -63,11 +69,14 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="button" onclick="signin()" name="login" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <!-- <button type="submit" onclick="signin()" name="login" class="btn btn-primary btn-block btn-flat">Sign In</button> -->
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
         </div>
         <!-- /.col -->
       </div>
     </form>
+
+
     <!-- /.social-auth-links -->
     <a href="Admin/view_forget_password">I forgot my password</a><br>
     <!-- <a href="register.html" class="text-center">Register a new membership</a> -->
@@ -76,12 +85,12 @@
 </div>
 <!-- /.login-box -->
 <!-- jQuery 3 -->
-<script src="{{ asset('/js/dist/jquery.min.js') }}"></script>
+<script src="/js/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="{{ asset('/js/dist/js/bootstrap.min.js') }}"></script>
+<script src="/js/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="{{ asset('/js/iCheck/icheck.min.js') }}"></script>
-<script src="{{ asset('/js/notify.js') }}"></script>
+<script src="/js/iCheck/icheck.min.js"></script>
+<script src="/js/notify.js"></script>
 <script type="text/javascript">
   $(function () {
     $('input').iCheck({
@@ -156,3 +165,4 @@ if(user == 1 && pass == 1)
 
 </body>
 </html>
+@endsection

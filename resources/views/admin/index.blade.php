@@ -14,13 +14,13 @@ and open the template in the editor.
 <meta property="og:site_name" content="tifinlife"/>
 <meta property="og:description" content="Get hot, fresh, healthy homemade lunch served at your desk every day. "/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="icon" href="<?php echo base_url() ?>images/favicon.png" type="image/gif" sizes="16x16">
+<link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<link href="{!! asset('/css/style.css') !!}" rel="stylesheet" type="text/css"/>
-<link href="{!! asset('/css/users-style.css') !!}" rel="stylesheet" type="text/css"/>
+<link href="/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="/css/users-style.css" rel="stylesheet" type="text/css"/>
 
-<link rel="stylesheet" href="{!! asset('/css/datepicker.css') !!}">
+<link rel="stylesheet" href="/css/datepicker.css">
 
 <link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">
 <style>
@@ -140,7 +140,7 @@ text-align:center;
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header logo logo-area">
-			<a class="navbar-brand" href="#"><img src="<?php echo base_url(); ?>images/tifinlife.png" class="img-responsive" alt="logo"></a>
+			<a class="navbar-brand" href="#"><img src="<?php //echo base_url(); ?>images/tifinlife.png" class="img-responsive" alt="logo"></a>
 			<!--<a href="#subscribe" class="visible-xs"><button type="button" class="btn btn-default xs-button">Subscribe Now</button></a>-->
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -155,7 +155,7 @@ text-align:center;
 	</nav>
 	<!--<div class="xs-phone visible-xs"><a href="tel:8138866866" >Call Now: +91 8138866866</a></div>-->
 
-<form action="<?php echo base_url(); ?>User/order" method="post">
+<form action="<?php //echo base_url(); ?>User/order" method="post">
 
 <?php
 	 if(isset($_POST['order_type'])){
@@ -194,7 +194,7 @@ text-align:center;
 						</li>
 					</ul>
 				</div>
-				<span style="color: red"><?php echo form_error('order_type');?></span>
+				<span style="color: red"><?php //echo form_error('order_type');?></span>
 				<!---test end--->
 				<!--<div class="btn-group t-btn-grup">
                           <button type="button" class="btn btn-primary btn-lg">Instantly</button>
@@ -249,7 +249,7 @@ text-align:center;
 								      </select>
 
 
-								 <span style="color: red"><?php echo form_error('food_item');?></span>
+								 <span style="color: red"><?php //echo form_error('food_item');?></span>
 							</div>
 						</div>
 					</div>
@@ -297,7 +297,7 @@ text-align:center;
 								     } ?>
 					      </select>
 					   
-					      <span style="color: red"><?php echo form_error('food_package');?></span>
+					      <span style="color: red"><?php //echo form_error('food_package');?></span>
 					    </div>
 					  </div>
 
@@ -487,7 +487,7 @@ text-align:center;
 					        <option value="10" <?php if(isset($option10)){ echo $option10; }  ?> >10</option>
 
 					      </select>
-					      <span style="color: red"><?php echo form_error('item_qty');?></span>
+					      <span style="color: red"><?php //echo form_error('item_qty');?></span>
 					    </div>
 					  </div>
 
@@ -518,7 +518,7 @@ text-align:center;
 					        <?php } } ?>
 					  
 					      </select>
-					        <span style="color: red"><?php echo form_error('location');?></span>
+					        <span style="color: red"><?php //echo form_error('location');?></span>
 					   </div>
 					</div>
 
@@ -527,7 +527,7 @@ text-align:center;
 					<div class="col-sm-6">
 					<div class="text-feild-height">
 					      <input type="text" class="form-control input-lg" select" name="company" placeholder="company / Floor" value="<?php if(isset($_POST['company'])){ echo $_POST['company']; } ?>">
-					      <span style="color: red"><?php echo form_error('company');?></span>
+					      <span style="color: red"><?php //echo form_error('company');?></span>
 					   </div>
 					</div>
 
@@ -544,7 +544,7 @@ text-align:center;
 					  <span class="input-group-addon calendar-icon-style"><i class="glyphicon glyphicon-calendar"></i></span>
 					  
 					  </div>
-					  <span style="color: red"><?php echo form_error('delivery_date');?></span>
+					  <span style="color: red"><?php //echo form_error('delivery_date');?></span>
 					</div>
 
 
@@ -703,7 +703,7 @@ text-align:center;
 		<div class="col-md-12">
 			<div class="col-md-4">
 				<div class="contet-img-style">
-					<img src="<?php echo base_url(); ?>images/feel_hungry.png" class="img-responsive">
+					<img src="<?php //echo base_url(); ?>images/feel_hungry.png" class="img-responsive">
 				</div>
 			</div>
 			<div class="col-md-8">
@@ -722,7 +722,7 @@ text-align:center;
 	<div class="col-xs-12 col-sm-6 col-md-4">
 		<div class="thumbnail thumbnail-style">
 			<div class="green-round">
-				<img src="<?php echo base_url(); ?>images/s-icon-1.png">
+				<img src="<?php //echo base_url(); ?>images/s-icon-1.png">
 			</div>
 			<h4>DESK DELIVERY</h4>
 		</div>
@@ -730,7 +730,7 @@ text-align:center;
 	<div class="col-xs-12 col-sm-6 col-md-4">
 		<div class="thumbnail thumbnail-style">
 			<div class="green-round">
-				<img src="<?php echo base_url(); ?>images/s-icon-2.png">
+				<img src="<?php //echo base_url(); ?>images/s-icon-2.png">
 			</div>
 			<h4>healthy</h4>
 		</div>
@@ -738,7 +738,7 @@ text-align:center;
 	<div class="col-xs-12 col-sm-6 col-md-4">
 		<div class="thumbnail thumbnail-style">
 			<div class="green-round">
-				<img src="<?php echo base_url(); ?>images/s-icon-3.png">
+				<img src="<?php //echo base_url(); ?>images/s-icon-3.png">
 			</div>
 			<h4>hygiene</h4>
 		</div>
@@ -747,7 +747,7 @@ text-align:center;
 	<div class="col-xs-12 col-sm-6 col-md-4">
 		<div class="thumbnail thumbnail-style">
 			<div class="green-round">
-				<img src="<?php echo base_url(); ?>images/s-icon-4.png">
+				<img src="<?// echo base_url(); ?>images/s-icon-4.png">
 			</div>
 			<h4>royal</h4>
 		</div>
@@ -755,7 +755,7 @@ text-align:center;
 	<div class="col-xs-12 col-sm-6 col-md-4">
 		<div class="thumbnail thumbnail-style">
 			<div class="green-round">
-				<img src="<?php echo base_url(); ?>images/s-icon-5.png">
+				<img src="<?php// echo base_url(); ?>images/s-icon-5.png">
 			</div>
 			<h4>Cost efficient</h4>
 		</div>
@@ -763,7 +763,7 @@ text-align:center;
 	<div class="col-xs-12 col-sm-6 col-md-4">
 		<div class="thumbnail thumbnail-style">
 			<div class="green-round">
-				<img src="<?php echo base_url(); ?>images/s-icon-6.png">
+				<img src="<?php //echo base_url(); ?>images/s-icon-6.png">
 			</div>
 			<h4>No preservatives</h4>
 		</div>
@@ -793,7 +793,7 @@ text-align:center;
 		<div class="col-sm-12 col-xs-12 footer-main-content-pad">
 			<div class="col-md-6">
 				<div class="footer-logo">
-					<img src="<?php echo base_url(); ?>images/footer-logo.png" class="img-responsive">
+					<img src="<?php //echo base_url(); ?>images/footer-logo.png" class="img-responsive">
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -857,7 +857,7 @@ text-align:center;
 <!-- login popup -->
 
 				<!---test end--->
-			<form action="<?php echo base_url() ?>User/user_login" method="post">
+			<form action="<?php //echo base_url() ?>User/user_login" method="post">
 
 				<div class="form-group row t-form-group">
 					<span style="color: red; "><?php if(isset($error)){ echo $error; }  ?></span>
@@ -874,7 +874,7 @@ text-align:center;
 						<div class="text-feild-height ">
 							<input type="text" class=" pos-demo form-control input-lg" name="username" placeholder="Email ID or Mobile Number" id="id_username" >
 							<span style="float: right; display: none;" id="id_change"><a href="#" onclick="change_value();">Change?</a></span>
-							<span style="color: red"><?php echo form_error('mobile');?></span>
+							<span style="color: red"><?php //echo form_error('mobile');?></span>
        						<span style="color: red; display: none;" id="invalid_error">Enter valid Email ID / Mobile Number</span>
 
 						</div>
@@ -899,7 +899,7 @@ text-align:center;
 				    <div class=" col-sm-12" style="display: none;" id="new_password_div">
 					    <div class="text-feild-height ">
 					      <input type="password" class="form-control input-lg" id="id_newpassword" placeholder="new password" name="newpassword">
-					       <span style="color: red"><?php echo form_error('newpassword');?></span>
+					       <span style="color: red"><?php //echo form_error('newpassword');?></span>
 					    </div>
 				    </div>
 
@@ -907,7 +907,7 @@ text-align:center;
 				    <div class=" col-sm-12 " style="display: none" id="confirmpwd_div">
 					    <div class="text-feild-height ">
 					    <input type="password" class="form-control input-lg" id="id_confmpwd" placeholder="confirm password" name="confmpwd" >
-					       <span style="color: red"><?php echo form_error('confmpwd');?></span>
+					       <span style="color: red"><?php //echo form_error('confmpwd');?></span>
 					    </div>
 				    </div>
 
@@ -1083,8 +1083,8 @@ text-align:center;
 <!--register form end--->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="{!! asset('/js/my_js.js') !!}"></script>
-<script src="{!! asset('/js/notify.js') !!}"></script>
+<script src="/js/my_js.js"></script>
+<script src="/js/notify.js"></script>
 
 
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script> -->
@@ -1164,7 +1164,7 @@ function change_order_tyep(value)
 
              $.ajax({
                  type: "POST",
-                 url: "<?php  echo base_url(); ?>" + "User/send_otp",
+                 url: "<?php  // base_url(); ?>" + "User/send_otp",
                  data: {mobile_no: username},
                 //dataType: JSON,  
                  cache:false,
@@ -1215,7 +1215,7 @@ function change_order_tyep(value)
       
                $.ajax({
                  type: "POST",
-                 url: "<?php  echo base_url(); ?>" + "User/send_otp_email",
+                 url: "<?php  //echo base_url(); ?>" + "User/send_otp_email",
                  data: {email: username},
                  //dataType: JSON,  
                  cache:false,
@@ -1290,7 +1290,7 @@ function check_otp(value)
     {
       $.ajax({
            type: "POST",
-           url: "<?php  echo base_url(); ?>" + "User/verify_otp",
+           url: "<?php  //echo base_url(); ?>" + "User/verify_otp",
            data: {otp: otp,mobile_no: username},
           //dataType: JSON,  
            cache:false,
@@ -1377,7 +1377,7 @@ else if(status == '1' )
 
    	    $.ajax({
            type: "POST",
-           url: "<?php  echo base_url(); ?>" + "User/user_login",
+           url: "<?php  // base_url(); ?>" + "User/user_login",
            data: {username: username,pwd: pwd,newpassword: pwd,confmpwd: confmpwd},
           //dataType: JSON,  
            cache:false,
@@ -1387,7 +1387,7 @@ else if(status == '1' )
                 	
                 	if(data == '1')
                 	{
-						window.location.href = "<?php  echo base_url(); ?>"+"User/profile";
+						window.location.href = "<?php  //echo base_url(); ?>"+"User/profile";
                 	}
                 	else if(data == '0')
                 	{
@@ -1622,7 +1622,7 @@ if(firstname == '1' || lastname == '1' || country_code == '1' || mobile == '1' |
 
 	 $.ajax({
            type: "POST",
-           url: "<?php  echo base_url(); ?>" + "User/new_registration",
+           url: "<?php  //echo base_url(); ?>" + "User/new_registration",
            data: {id_first_name: id_first_name,id_lastname: id_lastname,id_country_code: id_country_code,id_mobile: id_mobile,id_email:id_email,id_password:id_password,id_confirmpassword:id_confirmpassword},
           //dataType: JSON,  
            cache:false,
@@ -1633,7 +1633,7 @@ if(firstname == '1' || lastname == '1' || country_code == '1' || mobile == '1' |
                 	if(data == '00100')
                 	{
                 		$.notify("Successfully registered!", "success");
-						window.location.href = "<?php  echo base_url(); ?>"+"User/profile";
+						window.location.href = "<?php  //echo base_url(); ?>"+"User/profile";
                 	}
                 	else if(data == '01')
                 	{
