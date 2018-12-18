@@ -8,46 +8,32 @@
  <title>Biryani Now</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  
-   <link href="/css/style.css" rel="stylesheet">
+    <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
+  <link href="/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
- <link rel="stylesheet" href="/css/Ionicons/ionicons.min.css">
+   <link rel="stylesheet" href="/css/Ionicons/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/css/AdminLTE.min.css">
- 
   <link rel="stylesheet" href="/css/_all-skins.css">
   <link rel="stylesheet" href="/css/dataTables.bootstrap.min.css">
-  <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
-  
+
+
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
-  <?php 
-    //require("header.php");
-   ?>
-
-     @include('admin/header')
+@include('Admin/header')
+  
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
-  <?php 
-    //require("menu.php");
-   ?>
-
-     @include('admin/menu')
-
-<?php 
-    date_default_timezone_set("Asia/Calcutta");
-    $today = date('d-m-Y');
- ?>
-
+      @include('Admin/menu')
+ 
     <!-- /.sidebar -->
   </aside>
 
@@ -56,9 +42,10 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Order Today (<?php echo $today; ?>)
+        Food Items
+        
       </h1>
-   
+    <a href="<?php //echo base_url()  ?>Food/add_food "><span style="font-size: 15px; color: green; float: right;">Click to add new food item >></span></a>
     </section>
 
     <!-- Main content -->
@@ -69,79 +56,99 @@
           <!-- /.box -->
 
           <div class="box">
-    
-            <!-- /.box-header -->
+   
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped table-responsive">
+              <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>S. No</th>
-                  <th>Order Type</th>
-                  <th>User id</th>
-                  <th>Food</th>
-                  <th>Location</th>
-				          <th>View Profile</th>
+                  <th>Name</th>
+                  <th>Rate</th>
+        				  <th>Delivery Day</th>
+        				  <th>Activity</th>
                 </tr>
                 </thead>
                 <tbody>
 
+
               <?php 
 
-              // if(isset($order_info)) {
-              //   $dbhost = 'tcbs.co.in';
-              //   $dbuser = 'tcbscvvs_tiffin';
-              //   $dbpass = '3dTXvygT!Z%x';
-              //   $dbname = 'tcbscvvs_tiffinlife';
-              
-              //   $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+              // if(isset($food_info) && !empty($food_info)){
+              // $i = 0; foreach ($food_info as $key) { $i++;
 
-              //   if ($conn->connect_error) {
-              //       die("Connection failed: ".$conn->connect_error);
-              //    } 
-
-              // $i = 0;
-              // foreach ($order_info as $key) { $i++; 
-
-              //   $sql = "SELECT first_name,last_name FROM user_profile WHERE id=".$key['client_id'];
-              //   $result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
-              //   $username = $result->fetch_array(); 
-
-              //   $sql1 = "SELECT item_name FROM  food_info WHERE id=".$key['item'];
-              //   $result = $conn->query($sql1) or trigger_error($conn->error."[$sql1]");
-              //   $food = $result->fetch_array(); 
-
-              //   $sql2 = "SELECT location,building_name FROM  location_info WHERE id=".$key['delivery_location'];
-              //   $result = $conn->query($sql2) or trigger_error($conn->error."[$sql2]");
-              //   $location = $result->fetch_array(); 
-
-                ?>
+               ?>
                 
                 <tr>
-                  <td><?php// echo $i; ?></td>
-                  <td><?php// echo $key['order_type']; ?></td>
-                  <td><?php// echo $username['first_name'].' '.$username['last_name']; ?></td>
-                  <td><?php// echo $food['item_name']?><?php// echo $food['item_name']; ?>( <?php //echo $key['item_qty'];?> .No)</td>
-                  <td><?php// echo $location['location'].' '.$location['building_name']; ?></td>
-				          <td>
-
-                    <form name="form1" id="form1_id" method="post" action="<?php //echo base_url(); ?>Order/profile">
-                    <span class="i-style-eye">
-                      <input type="hidden" name="order_id" value="<?php// if(isset($key['id'])){ echo $key['id']; } ?>">
-                        <!-- <a href="#" onclick="submit_form();"> -->
-                      <!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
-                    </a>
-                    <input type="submit" name="submit" value="view profile">
-                    </span>
-                    </form>
-
-                  </td>
-              <?php //} } ?>    
+                    <td><?php //echo $i; ?></td>
+                    <td class="tooltip1"><?php //echo $key['item_name']; ?>
+                      
+                      <span class="tooltiptext"><?php
+                       //echo $key['item_description'].'</br> Delivery Day : '.$key['day']; ?> 
+                     </span>
 
 
+                    </td>
+                    <td><?php //echo 'Rs : '.$key['rate'].'(GST : '.$key['gst_percentage'].'%, Handling Charge : Rs '.$key['handling_rate'].')' ?></td>
+                    <td><?php //echo $key['day']; ?> </td>
+                    <td>
+                      <ul class="action">
+                          <li>
+                            <form id="form_food" method="post" action="<?php //echo base_url(); ?>Food/edit ">
+                              <input type="hidden" name="food_id" value="<?php //echo $key['id']; ?>">
+                                <button type="submit" class="btn icon-btn">
+                                    <img src="<?php //echo base_url(); ?>images/Pencil.png">
+                                </button>
+                            </form>
 
+                          </li>
+                           <li>
+                          <!--button toggle-->
+                            <?php 
+                           // if($key['status'] == '1')
+                           // {
+                           //  $check = 'checked="checked"';
+                           // }
+                           // else if($key['status'] == '0')
+                           // {
+                           //    $check = "";
+                           // }
+
+                  ?>
+                          <div class="onoffswitch">
+                              <input type="checkbox" value="<?php //echo $key['id']; ?>" onchange="change_status(this.id)" name="<?php //echo $key['id']; ?>onoffswitch" class="onoffswitch-checkbox" id="<?php //echo $key['id']; ?>myonoffswitch"  <?php //if(isset($check)){ echo $check; } ?> >
+
+                              
+                              <label class="onoffswitch-label" for="<?php //echo $key['id']; ?>myonoffswitch">
+                                  <span class="onoffswitch-inner"></span>
+                                  <span class="onoffswitch-switch"></span>
+                              </label>
+                          </div>
+                          <!--button toggle end-->
+                            </li>
+                              <li>
+
+                            <form id="form_food" method="post" action="<?php //echo base_url(); ?>Food/delete ">
+                              <input type="hidden" name="delete_id" value="<?php //echo $key['id']; ?>">
+                               <button type="submit" class="btn icon-btn">
+                                    <img src="<?php // base_url(); ?>images/trash.png">
+                                  </button>
+                            </form>
+
+                            </li>
+
+                      </ul>
+                    </td>
                 </tr>
+   
+              <?php //} }
+              //else{ ?>
+                      
+                  <tr>
+                    <td colspan="5">No food items</td>
+                  </tr>         
+              <?php //} ?>
+           </tbody>
 
-                </tbody>
               </table>
             </div>
             <!-- /.box-body -->
@@ -155,15 +162,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-
-
- <?php  // require("footer.php"); ?>
- @include('admin/footer')
-
-
-
-
+  <?php   //require("footer.php"); ?>
+ @include('Admin/footer')
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Create the tabs -->
@@ -358,9 +358,7 @@
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-
-
-
+<!-- ./wrapper -->
 <script src="/js/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="/js/dist/js/bootstrap.min.js"></script>
@@ -369,7 +367,6 @@
 <!-- DataTables -->
 <script src="/js/jquery.dataTables.min.js"></script>
 <script src="/js/dataTables.bootstrap.min.js"></script>
-
 <!-- page script -->
 <script>
   $(function () {
@@ -383,13 +380,68 @@
       'autoWidth'   : false
     })
   })
+</script>
+
+<script type="text/javascript">
+    function edit()
+  {
+    document.getElementById("form_food").submit();
+  }
 
 
-function submit_form()
-{
-  document.getElementById("form1_id").submit();
-}
+
+
+  function change_status(value)
+  {
+  
+        var id = document.getElementById(value).value;
+        var c=document.getElementById(value);
+        if (c.checked) 
+        {
+          var status = '1';
+
+
+               $.ajax({
+               type: "POST",
+               url: "<?php  //echo base_url(); ?>" + "/Food/active_inactive",
+               data: {status: status,id:id},
+             //  dataType: JSON,  
+               cache:false,
+               success: 
+                    function(data)
+                    {
+                     if(data == '1')
+                     {
+                      alert("Food Activated");
+                     }
+                    }
+                });
+
+        }
+        else
+        {
+          var status = '0';
+
+               $.ajax({
+               type: "POST",
+               url: "<?php  //echo base_url(); ?>" + "/Food/active_inactive",
+               data: {status: status,id:id},
+             //  dataType: JSON,  
+               cache:false,
+               success: 
+                    function(data)
+                    {
+                     if(data == '1')
+                     {
+                      alert("Food Inactivated");
+                     
+                     }
+                    }
+                });
+        }
+
+  }
+
 </script>
 </body>
 </html>
-

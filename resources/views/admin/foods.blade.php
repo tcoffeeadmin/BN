@@ -9,7 +9,8 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
-   <link href="/css/style.css" rel="stylesheet">
+  <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
+  <link href="/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
@@ -20,132 +21,106 @@
  
   <link rel="stylesheet" href="/css/_all-skins.css">
   <link rel="stylesheet" href="/css/dataTables.bootstrap.min.css">
-  <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
   
+  
+  
+
+
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<style type="text/css">
+  .boxes{
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 50%;
+    float: initial;
+
+  }
+</style>
+
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
+@include('admin/header')
   <?php 
-    //require("header.php");
+   // require("header.php");
    ?>
-
-     @include('admin/header')
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
-  <?php 
-    //require("menu.php");
-   ?>
+   <?php 
+     //require("menu.php");
+   ?> 
 
      @include('admin/menu')
-
-<?php 
-    date_default_timezone_set("Asia/Calcutta");
-    $today = date('d-m-Y');
- ?>
-
+      
     <!-- /.sidebar -->
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+  <section class="content-header" style="border:3px solid #d2d6de; ">
       <h1>
-       Order Today (<?php echo $today; ?>)
+        Food Items
+        
       </h1>
-   
+    <a href="{{ route('addfood') }}"><span style="font-size: 15px; font-weight: bold; color: green; float: right;">CLICK TO ADD NEW ITEM</span></a>
     </section>
+
 
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-md-12">
          
           <!-- /.box -->
 
-          <div class="box">
-    
+          <div class="box boxes">
             <!-- /.box-header -->
+
+   <?php  foreach ($foods as $food) { ?>
+
+          <div class="panel panel-default col-md-12 ">
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped table-responsive">
-                <thead>
-                <tr>
-                  <th>S. No</th>
-                  <th>Order Type</th>
-                  <th>User id</th>
-                  <th>Food</th>
-                  <th>Location</th>
-				          <th>View Profile</th>
-                </tr>
-                </thead>
-                <tbody>
-
-              <?php 
-
-              // if(isset($order_info)) {
-              //   $dbhost = 'tcbs.co.in';
-              //   $dbuser = 'tcbscvvs_tiffin';
-              //   $dbpass = '3dTXvygT!Z%x';
-              //   $dbname = 'tcbscvvs_tiffinlife';
-              
-              //   $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-
-              //   if ($conn->connect_error) {
-              //       die("Connection failed: ".$conn->connect_error);
-              //    } 
-
-              // $i = 0;
-              // foreach ($order_info as $key) { $i++; 
-
-              //   $sql = "SELECT first_name,last_name FROM user_profile WHERE id=".$key['client_id'];
-              //   $result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
-              //   $username = $result->fetch_array(); 
-
-              //   $sql1 = "SELECT item_name FROM  food_info WHERE id=".$key['item'];
-              //   $result = $conn->query($sql1) or trigger_error($conn->error."[$sql1]");
-              //   $food = $result->fetch_array(); 
-
-              //   $sql2 = "SELECT location,building_name FROM  location_info WHERE id=".$key['delivery_location'];
-              //   $result = $conn->query($sql2) or trigger_error($conn->error."[$sql2]");
-              //   $location = $result->fetch_array(); 
-
-                ?>
-                
-                <tr>
-                  <td><?php// echo $i; ?></td>
-                  <td><?php// echo $key['order_type']; ?></td>
-                  <td><?php// echo $username['first_name'].' '.$username['last_name']; ?></td>
-                  <td><?php// echo $food['item_name']?><?php// echo $food['item_name']; ?>( <?php //echo $key['item_qty'];?> .No)</td>
-                  <td><?php// echo $location['location'].' '.$location['building_name']; ?></td>
-				          <td>
-
-                    <form name="form1" id="form1_id" method="post" action="<?php //echo base_url(); ?>Order/profile">
-                    <span class="i-style-eye">
-                      <input type="hidden" name="order_id" value="<?php// if(isset($key['id'])){ echo $key['id']; } ?>">
-                        <!-- <a href="#" onclick="submit_form();"> -->
-                      <!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
-                    </a>
-                    <input type="submit" name="submit" value="view profile">
-                    </span>
-                    </form>
-
-                  </td>
-              <?php //} } ?>    
+             
+              <div class="panel-body">
+                <?php $id = $food->id; ?>
+                <div style="float: right;"><a href="{{route('edit_food', $id )}}" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a></div>
 
 
 
-                </tr>
-
-                </tbody>
-              </table>
+               <div class="col-md-12" >
+                <div class="col-md-6" > 
+                  <img src="<?php  echo $food->image; ?>" class="user-image" alt="User Image" style="width: 200px; height: 150px;">
+                </div>
+                <div class="col-md-6" style="float: right;">
+                  <span style="font-weight: bold; font-size: 25px; color: #FF4500; "><?php  echo $food->name; ?></span></br>
+                  <span><?php  echo $food->description; ?></span></br></br>
+                  <span style="float: right; width: 100px; font-weight: bold; color: green; font-size: 18px;">Rs: <?php  echo $food->price; ?>
+                  </span>
+                  <!-- <span>Chicken Biryani</span> -->
+                </div>
+              </div>  
+              </div>
             </div>
+          </div>
+
+  <?php   } ?>
+
+
+        
+
             <!-- /.box-body -->
           </div>
+
+
+
+
+
+
           <!-- /.box -->
         </div>
         <!-- /.col -->
@@ -155,15 +130,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-
-
- <?php  // require("footer.php"); ?>
+ <?php //  require("footer.php"); ?>
  @include('admin/footer')
-
-
-
-
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Create the tabs -->
@@ -360,7 +328,6 @@
 </div>
 
 
-
 <script src="/js/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="/js/dist/js/bootstrap.min.js"></script>
@@ -369,7 +336,6 @@
 <!-- DataTables -->
 <script src="/js/jquery.dataTables.min.js"></script>
 <script src="/js/dataTables.bootstrap.min.js"></script>
-
 <!-- page script -->
 <script>
   $(function () {
@@ -383,13 +349,7 @@
       'autoWidth'   : false
     })
   })
-
-
-function submit_form()
-{
-  document.getElementById("form1_id").submit();
-}
 </script>
+
 </body>
 </html>
-

@@ -1,24 +1,26 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <title>TIFINLIFE</title>
+ <title>Biryani Now</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
-  <link rel="icon" href="<?php echo base_url() ?>images/favicon.png" type="image/gif" sizes="16x16">
-  <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/css/bootstrap.min.css">
+  <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
+  <link href="/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/Ionicons/ionicons.min.css">
+ <link rel="stylesheet" href="/css/Ionicons/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/css/AdminLTE.min.css">
  
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/_all-skins.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="/css/_all-skins.css">
+  <link rel="stylesheet" href="/css/dataTables.bootstrap.min.css">
   
   
   
@@ -30,17 +32,19 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
+@include('admin/header')
   <?php 
-    require("header.php");
+   // require("header.php");
    ?>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
    <?php 
-     require("menu.php");
+     //require("menu.php");
    ?> 
 
+     @include('admin/menu')
+      
     <!-- /.sidebar -->
   </aside>
 
@@ -78,31 +82,33 @@
                 <tbody>
 				
 		          <?php 
-              $sl = 0;
-              if(isset($user_info) && !empty($user_info)){  
-                foreach ($user_info as $key) {  $sl++; ?>
+              // $sl = 0;
+              // if(isset($user_info) && !empty($user_info)){  
+              //   foreach ($user_info as $key) {  $sl++;
+
+                 ?>
                   
                 <tr>
-                  <td><?php echo $sl; ?></td>
-                  <td><?php echo $key['id']; ?></td>
-                  <td><?php echo $key['first_name'].$key['last_name']; ?></td>
-                  <td><?php echo $key['mobile']; ?></td>
+                  <td><?php //echo $sl; ?></td>
+                  <td><?php //echo $key['id']; ?></td>
+                  <td><?php //echo $key['first_name'].$key['last_name']; ?></td>
+                  <td><?php //echo $key['mobile']; ?></td>
 
                   <td>
           				  <span class="i-style-eye">
-          				  <a href="<?php echo base_url(); ?>User/user_profile?id=<?php echo $key['id']; ?>" >
+          				  <a href="<?php //echo base_url(); ?>User/user_profile?id=<?php //echo $key['id']; ?>" >
           				    <i class="fa fa-eye" aria-hidden="true"></i>
           				  </a>
           				  </span>
         				  </td>
 			    	
                 </tr>
-              <?php } } else { ?>
+              <?php //} } else { ?>
 
                 <tr>
                   <td>No user found. </td>
                 </tr>
-              <?php } ?>
+              <?php //} ?>
 		
 				
 				
@@ -126,8 +132,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
- <?php   require("footer.php"); ?>
-
+ <?php //  require("footer.php"); ?>
+ @include('admin/footer')
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Create the tabs -->
@@ -324,14 +330,14 @@
 </div>
 
 
-<script src="<?php echo base_url(); ?>/assets/js/dist/jquery.min.js"></script>
+<script src="/js/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url(); ?>assets/js/dist/js/bootstrap.min.js"></script>
+<script src="/js/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="<?php echo base_url(); ?>assets/js/adminlte.min.js"></script>
+<script src="/js/adminlte.min.js"></script>
 <!-- DataTables -->
-<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/dataTables.bootstrap.min.js"></script>
+<script src="/js/jquery.dataTables.min.js"></script>
+<script src="/js/dataTables.bootstrap.min.js"></script>
 <!-- page script -->
 <script>
   $(function () {

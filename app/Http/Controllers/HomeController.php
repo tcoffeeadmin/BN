@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Customer;
-
 
 class HomeController extends Controller
 {
@@ -26,25 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin/home');
-    }
-
-    public function login()
-    {
-        return view('login');
-    }
-    public function call()
-    {
-        return view('call');
-    }
-    public function call_action()
-    {
-        echo "submit success";
-
-    }
-
-    public function admin_home()
-    {
-        return view('admin/home');
+        return view('home');
     }
 }

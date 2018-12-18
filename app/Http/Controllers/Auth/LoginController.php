@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -20,12 +19,13 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/admin_home';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -36,23 +36,4 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
-
-    protected function credentials(Request $request)
-    {
-        $field = filter_var($request->get($this->username()), FILTER_VALIDATE_EMAIL)
-            ? $this->username()
-            : 'username';
-
-        return [
-            $field => $request->get($this->username()),
-            'password' => $request->password,
-        ];
-    }
-
-
-
-
 }
-
-
-

@@ -1,43 +1,51 @@
  <?php 
-         $dbhost = 'tcbs.co.in';
-         $dbuser = 'tcbscvvs_tiffin';
-         $dbpass = '3dTXvygT!Z%x';
-         $dbname = 'tcbscvvs_tiffinlife';
+         // $dbhost = 'tcbs.co.in';
+         // $dbuser = 'tcbscvvs_tiffin';
+         // $dbpass = '3dTXvygT!Z%x';
+         // $dbname = 'tcbscvvs_tiffinlife';
         
-         $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+         // $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
-         if ($conn->connect_error) {
-              die("Connection failed: ".$conn->connect_error);
-          } 
+         // if ($conn->connect_error) {
+         //      die("Connection failed: ".$conn->connect_error);
+         //  } 
 
-          $sql = "SELECT * FROM  notification_status WHERE notification_status='0' ";
-          $result = $conn->query($sql);
-          $allnotification =  $result->num_rows; 
+         //  $sql = "SELECT * FROM  notification_status WHERE notification_status='0' ";
+         //  $result = $conn->query($sql);
+         //  $allnotification =  $result->num_rows; 
 
-          $sql1 = "SELECT * FROM  notification_status WHERE notification_status='0' AND comment_type = '1' ";
-          $result1 = $conn->query($sql1);
-          $newuser =  $result1->num_rows; 
+         //  $sql1 = "SELECT * FROM  notification_status WHERE notification_status='0' AND comment_type = '1' ";
+         //  $result1 = $conn->query($sql1);
+         //  $newuser =  $result1->num_rows; 
 
-          $sql2 = "SELECT * FROM  notification_status WHERE notification_status='0' AND comment_type = '2' ";
-          $result2 = $conn->query($sql2);
-          $order =  $result2->num_rows; 
+         //  $sql2 = "SELECT * FROM  notification_status WHERE notification_status='0' AND comment_type = '2' ";
+         //  $result2 = $conn->query($sql2);
+         //  $order =  $result2->num_rows; 
 
-          $sql3 = "SELECT * FROM  notification_status WHERE notification_status='0' AND comment_type = '3' ";
-          $result3 = $conn->query($sql3);
-          $cancel =  $result3->num_rows; 
+         //  $sql3 = "SELECT * FROM  notification_status WHERE notification_status='0' AND comment_type = '3' ";
+         //  $result3 = $conn->query($sql3);
+         //  $cancel =  $result3->num_rows; 
 
  ?>
+
+<style type="text/css">
+
+    .avatar{
+      border-radius: 100%;
+      max-width: 25%;
+    }  
+</style>
 
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="<?php echo base_url() ?>Home/index " class="logo logo-bkg-color">
+    <a href="<?php ///echo base_url() ?>Home/index " class="logo logo-bkg-color">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini">
-          <img src="<?php echo base_url() ?>images/favicon.png">  
+          <img src="<?php //echo base_url() ?>images/favicon.png">  
       </span>
       <span class="logo-lg">
-          <img src="<?php echo base_url(); ?>images/web_logo.png">
+          <img class="avatar" src="">
       </span>
 
     </a>
@@ -69,6 +77,7 @@
                     <a href="#">
                       <div class="pull-left">
                         <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          <!-- <img class="avatar" src="http://127.0.0.1:8000/uploads/PICTC082018013.jpg"> -->
                       </div>
                       <h4>
                         Support Team
@@ -151,19 +160,19 @@
                 <ul class="menu">
 
                   <li>
-                    <a href="<?php echo base_url(); ?>Home/remove_user_notification">
+                    <a href="<?php //echo base_url(); ?>Home/remove_user_notification">
                       <i class="fa fa-users text-aqua"></i> <?php if(isset($newuser)){ echo $newuser; } ?> new members joined 
                     </a>
                   </li>
 
                    <li>
-                    <a href="<?php echo base_url(); ?>Home/remove_order_notification">
+                    <a href="<?php //echo base_url(); ?>Home/remove_order_notification">
                       <i class="fa fa-shopping-cart text-green"></i> <?php if(isset($order)){ echo $order; } ?> Order today
                     </a>
                   </li>
 
                   <li>
-                    <a href="<?php echo base_url(); ?>Home/remove_cancel_notification">
+                    <a href="<?php //echo base_url(); ?>Home/remove_cancel_notification">
                       <i class="fa fa-users text-red"></i> <?php if(isset($cancel)){ echo $cancel; } ?> Cancel request received 
                     </a>
                   </li>
@@ -172,7 +181,7 @@
 
 
               </li>
-              <li class="footer"><a href="<?php echo base_url(); ?>Home/notications">View all</a></li>
+              <li class="footer"><a href="<?php //echo base_url(); ?>Home/notications">View all</a></li>
             </ul>
 
           </li>
@@ -184,13 +193,14 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url(); ?>images/profile.png" class="user-image" alt="User Image">
+              <img src="http://127.0.0.1:8000/uploads/PICTC082018013.jpg" class="user-image" alt="User Image">
+               <!-- <img class="avatar" src="http://127.0.0.1:8000/uploads/PICTC082018013.jpg"> -->
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url(); ?>images/profile.png" class="img-circle" alt="User Image">
+                <img src="http://127.0.0.1:8000/uploads/PICTC082018013.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer
@@ -218,7 +228,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo base_url(); ?>Admin/index" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php //echo base_url(); ?>Admin/index" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

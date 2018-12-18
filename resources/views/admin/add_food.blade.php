@@ -1,53 +1,43 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <title>Biryani Now</title>
+  <title>Biryani Now</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
    <link href="/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css">
+  <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
+   <!-- Bootstrap 3.3.7 -->
+ <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
- <link rel="stylesheet" href="/css/Ionicons/ionicons.min.css">
+   <link rel="stylesheet" href="/css/Ionicons/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/css/AdminLTE.min.css">
- 
-  <link rel="stylesheet" href="/css/_all-skins.css">
-  <link rel="stylesheet" href="/css/dataTables.bootstrap.min.css">
-  <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
-  
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="/css/_all-skins.css">
+
   <!-- Google Font -->
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  <?php 
-    //require("header.php");
+   <?php 
+   // require("header.php");
    ?>
-
-     @include('admin/header')
+    @include('Admin/header')
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
-  <?php 
-    //require("menu.php");
+     <?php 
+   // require("menu.php");
    ?>
-
-     @include('admin/menu')
-
-<?php 
-    date_default_timezone_set("Asia/Calcutta");
-    $today = date('d-m-Y');
- ?>
-
+    @include('Admin/menu')
     <!-- /.sidebar -->
   </aside>
 
@@ -56,113 +46,125 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Order Today (<?php echo $today; ?>)
+     Add Food
+        
       </h1>
-   
+
     </section>
 
     <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-xs-12">
-         
-          <!-- /.box -->
-
-          <div class="box">
-    
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped table-responsive">
-                <thead>
-                <tr>
-                  <th>S. No</th>
-                  <th>Order Type</th>
-                  <th>User id</th>
-                  <th>Food</th>
-                  <th>Location</th>
-				          <th>View Profile</th>
-                </tr>
-                </thead>
-                <tbody>
-
-              <?php 
-
-              // if(isset($order_info)) {
-              //   $dbhost = 'tcbs.co.in';
-              //   $dbuser = 'tcbscvvs_tiffin';
-              //   $dbpass = '3dTXvygT!Z%x';
-              //   $dbname = 'tcbscvvs_tiffinlife';
-              
-              //   $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-
-              //   if ($conn->connect_error) {
-              //       die("Connection failed: ".$conn->connect_error);
-              //    } 
-
-              // $i = 0;
-              // foreach ($order_info as $key) { $i++; 
-
-              //   $sql = "SELECT first_name,last_name FROM user_profile WHERE id=".$key['client_id'];
-              //   $result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
-              //   $username = $result->fetch_array(); 
-
-              //   $sql1 = "SELECT item_name FROM  food_info WHERE id=".$key['item'];
-              //   $result = $conn->query($sql1) or trigger_error($conn->error."[$sql1]");
-              //   $food = $result->fetch_array(); 
-
-              //   $sql2 = "SELECT location,building_name FROM  location_info WHERE id=".$key['delivery_location'];
-              //   $result = $conn->query($sql2) or trigger_error($conn->error."[$sql2]");
-              //   $location = $result->fetch_array(); 
-
-                ?>
-                
-                <tr>
-                  <td><?php// echo $i; ?></td>
-                  <td><?php// echo $key['order_type']; ?></td>
-                  <td><?php// echo $username['first_name'].' '.$username['last_name']; ?></td>
-                  <td><?php// echo $food['item_name']?><?php// echo $food['item_name']; ?>( <?php //echo $key['item_qty'];?> .No)</td>
-                  <td><?php// echo $location['location'].' '.$location['building_name']; ?></td>
-				          <td>
-
-                    <form name="form1" id="form1_id" method="post" action="<?php //echo base_url(); ?>Order/profile">
-                    <span class="i-style-eye">
-                      <input type="hidden" name="order_id" value="<?php// if(isset($key['id'])){ echo $key['id']; } ?>">
-                        <!-- <a href="#" onclick="submit_form();"> -->
-                      <!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
-                    </a>
-                    <input type="submit" name="submit" value="view profile">
-                    </span>
-                    </form>
-
-                  </td>
-              <?php //} } ?>    
-
-
-
-                </tr>
-
-                </tbody>
-              </table>
+    <section class="content" id="edit-banner">
+      <div class="row content-padding-top">
+        <!-- left column -->
+        <div class="col-md-8 col-md-offset-2">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">BIRIYANIS</h3>
             </div>
-            <!-- /.box-body -->
+            <!-- /.box-header -->
+            <!-- form start -->
+          @if(count($errors) > 0)
+              @foreach($errors -> all() as $error)
+                <div class="alert alert-danger">{{ $error }}</div>
+              @endforeach
+            @endif
+
+
+
+
+            @if (session('response'))
+               <div class="alert alert-success">{{ session('response') }}</div>
+            @endif
+            <form role="form" method="post" action="{{ url('/add_biryani') }}" enctype="multipart/form-data">
+              {{ csrf_field() }}
+              <div class="box-body">
+
+                <div class="form-group{{ $errors->has('category') ? 'has-error': '' }}">
+                  <label for="code">CODE</label><span style="color: red;">**</span>
+                  <input type="text" name="code" class="form-control" value="{{ old('code') }}" id="exampleInputEmail1" placeholder="Code" >  <span style="color: red"><?php //echo form_error('code');?></span>
+                </div>
+
+
+                <div class="form-group{{ $errors->has('name') ? 'has-error': '' }}">
+                  <label for="name">Name</label><span style="color: red;">**</span>
+                  <input type="text" name="name" class="form-control" value="{{ old('name') }}" id="exampleInputEmail1" placeholder="Name">  <span style="color: red"><?php //echo form_error('name');?></span>
+                </div>
+        
+                <div class="form-group{{ $errors->has('description') ? 'has-error': '' }}">
+                  <label for="description">Description</label><span style="color: red;">**</span>
+                  <textarea name="description" class="form-control" rows="3" placeholder="Description">{{ old('description') }}</textarea>  <span style="color: red"><?php //echo form_error('description');?></span>
+                </div>
+              
+
+		 
+			       <div class="form-group{{ $errors->has('price') ? 'has-error': ''}}">
+              <label for="price">Price</label><span style="color: red;">**</span>
+                  <input type="text" name="price" class="form-control" value="{{ old('price') }}" id="exampleInputEmail1" placeholder="Price" onkeypress="return isNumber(event)">  
+                  <span style="color: red"><?php //echo form_error('price');?></span>
+              </div>
+				
+				
+				
+      				<div class="col-xs-6 pa-left-rmve">
+      				  <div class="form-group{{ $errors->has('gst') ? 'has-error':'' }}" >
+      				  <label for="gst">Gst(%)</label><span style="color: red;">**</span>
+      				  
+                         <input type="text" name="gst" class="form-control" value="{{ old('gst') }}" placeholder="Gst(%)" onkeypress="return isNumber(event)">  
+                         <span style="color: red"><?php //echo form_error('gst');?></span>
+      				  </div>
+      				</div>
+
+              
+              <div class="col-xs-6 pa-left-rmve">
+                <div class="form-group{{ $errors->has('image') ? 'has-error':'' }}" >
+                <label for="gst">Image</label><span style="color: red;">**</span>
+                
+                         <input type="file" name="image" class="form-control" accept=".jpg,.png" >  
+                         <span style="color: red"><?php //echo form_error('gst');?></span>
+                </div>
+              </div>
+
+
+
+	
+            </div>
+              <!-- /.box-body -->
+            <div class="box-footer box-body">    
+             <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
+                Submit
+              </button>
+            
+                <button type="submit" class="btn btn-danger">Cancel</button>
+              </div>
+            </form>
+
+
+
+
+      <div class="modal fade " id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content alert alert-success box-radius">
+             
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                 <strong>Success!</strong> This alert box could indicate a successful or positive action.
+            </div>
+            <!-- /.modal-content -->
           </div>
-          <!-- /.box -->
+          <!-- /.modal-dialog -->
         </div>
-        <!-- /.col -->
       </div>
-      <!-- /.row -->
-    </section>
+    </div> 
+  </div>
+      
+</section>
     <!-- /.content -->
   </div>
+ 
   <!-- /.content-wrapper -->
-
-
-
  <?php  // require("footer.php"); ?>
- @include('admin/footer')
-
-
-
+  @include('Admin/footer')
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -358,38 +360,25 @@
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-
-
-
-<script src="/js/dist/jquery.min.js"></script>
+<script src="<?php// echo base_url(); ?>/assets/js/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="/js/dist/js/bootstrap.min.js"></script>
+<script src="<?php// echo base_url(); ?>assets/js/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="/js/adminlte.min.js"></script>
+<script src="<?php //echo base_url(); ?>assets/js/adminlte.min.js"></script>
 <!-- DataTables -->
-<script src="/js/jquery.dataTables.min.js"></script>
-<script src="/js/dataTables.bootstrap.min.js"></script>
+<script src="<?php //echo base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
+<script src="<?php //echo base_url(); ?>assets/js/dataTables.bootstrap.min.js"></script>
 
-<!-- page script -->
-<script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
-
-
-function submit_form()
-{
-  document.getElementById("form1_id").submit();
+<script type="text/javascript">
+  function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
 }
 </script>
+
 </body>
 </html>
-

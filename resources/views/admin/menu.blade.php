@@ -26,16 +26,15 @@
  -->
 
           <li class="active">
-          <a href="{{route('admin_home')}} ">
+          <a href="{{route('dashboard')}}">
             <i class="fa fa-tachometer" aria-hidden="true"></i> <span>Dashboard</span>
             <span class="pull-right-container">
         <!--       <small class="label pull-right bg-green">new</small> -->
             </span>
           </a>
         </li>
-
         <li>
-          <a href="{{route('admin_home')}}">
+          <a href="{{route('orders')}}">
            <i class="fa fa-book" aria-hidden="true"></i><span>Orders</span>
             <span class="pull-right-container">
         <!--       <small class="label pull-right bg-green">new</small> -->
@@ -44,7 +43,7 @@
         </li>
 
         <li>
-         <a href="{{route('admin_home')}}">
+         <a href="{{route('user1')}}">
           <i class="fa fa-users" aria-hidden="true"></i> <span>Users</span>
             <span class="pull-right-container">
         <!--       <small class="label pull-right bg-green">new</small> -->
@@ -52,18 +51,10 @@
           </a>
         </li>
 
-        <li>
-          <a href="{{route('admin_home')}}">
-            <i class="fa fa-map-marker" aria-hidden="true"></i><span>Locations</span>
-            <span class="pull-right-container">
-        <!--       <small class="label pull-right bg-green">new</small> -->
-            </span>
-          </a>
-        </li>
 
 
         <li>
-          <a href="{{route('admin_home')}}">
+          <a href="{{route('fooditems')}}">
           <i class="fa fa-cutlery" aria-hidden="true"></i><span>Food Items</span>
             <span class="pull-right-container">
         <!--       <small class="label pull-right bg-green">new</small> -->
@@ -71,27 +62,6 @@
           </a>
         </li>
 
-      <li class="treeview">
-          <a href="{{route('admin_home')}}">
-            <i class="fa fa-list-alt" aria-hidden="true"></i> <span>Report</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Daily Report</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Monthly Report</a></li>
-          </ul>
-        </li>
-
-        <li>
-          <a href="{{route('admin_home')}}">
-            <i class="fa fa-picture-o" aria-hidden="true"></i> <span>Banner</span>
-            <span class="pull-right-container">
-        <!--       <small class="label pull-right bg-green">new</small> -->
-            </span>
-          </a>
-        </li>
 
 
 

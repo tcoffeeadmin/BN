@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Biryani Now ') }}</title>
+    <title>{{ config('app.name', 'BiryaniNow') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -28,15 +28,16 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Biryani Now') }}
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                      Biryani Now
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
+
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="{{ url('/home') }}">Home</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -45,7 +46,6 @@
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
-                            
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -53,6 +53,8 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                       <li><a href="">Profile</a></li>
+                                        <li><a href="">Category</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

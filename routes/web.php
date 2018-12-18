@@ -12,14 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('Auth.login');
+    return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/call', 'HomeController@call')->name('call');
-Route::get('/admin_home','HomeController@admin_home')->name('admin_home');
+Route::get('/user1', 'AdminController@user1')->name('user1');
 
-// Route::post('/admin_home','HomeController@call_action')->name('admin_home');
+Route::get('/orders','AdminController@orders')->name('orders');
+Route::get('/fooditems','AdminController@fooditems')->name('fooditems');
+Route::get('/addfoodpage','AdminController@addfood')->name('addfood');
+
+Route::get('/dashboard','AdminController@dashboard')->name('dashboard');
+Route::post('/add_biryani','AdminController@foodadd');
+Route::get('/edit_food/{id}','AdminController@food_edit')->name('edit_food');
+
+Route::post('/update_biryani','AdminController@update_biryani');
 
