@@ -45,7 +45,7 @@
           <img src="<?php //echo base_url() ?>images/favicon.png">  
       </span>
       <span class="logo-lg">
-          <img class="avatar" src="">
+                  <img width="50px" height="50px" src="/images/logo.png">
       </span>
 
     </a>
@@ -228,7 +228,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php //echo base_url(); ?>Admin/index" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

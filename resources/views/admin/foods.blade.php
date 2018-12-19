@@ -22,7 +22,9 @@
   <link rel="stylesheet" href="/css/_all-skins.css">
   <link rel="stylesheet" href="/css/dataTables.bootstrap.min.css">
   
-  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
 
 
@@ -88,7 +90,13 @@
              
               <div class="panel-body">
                 <?php $id = $food->id; ?>
-                <div style="float: right;"><a href="{{route('edit_food', $id )}}" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a></div>
+
+
+                <div style="float: right;"><a href="{{route('edit_food', $id )}}" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+
+                <a href="{{route('delete_food', $id )}}" data-toggle="tooltip" data-placement="bottom" title="Delete" style="padding-left: 5px;"><span class="glyphicon glyphicon-trash
+                  "></span></a></div>
+
 
 
 

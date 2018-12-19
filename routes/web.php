@@ -30,3 +30,6 @@ Route::get('/edit_food/{id}','AdminController@food_edit')->name('edit_food');
 
 Route::post('/update_biryani','AdminController@update_biryani');
 
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/delete_food/{id}','AdminController@delete_food')->name('delete_food');;
+

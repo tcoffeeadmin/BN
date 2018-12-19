@@ -5,7 +5,7 @@
    
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>TIFINLIFE</title>
+  <title>Biryani Now</title>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -183,13 +183,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php //echo base_url(); ?>images/profile.png" class="user-image" alt="User Image">
+              <img src="http://127.0.0.1:8000/uploads/PICTC082018013.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php //echo base_url(); ?>images/profile.png" class="img-circle" alt="User Image">
+                <img src="http://127.0.0.1:8000/uploads/PICTC082018013.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer

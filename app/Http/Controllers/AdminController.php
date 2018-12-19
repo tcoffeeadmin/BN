@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 use Auth;
 use App\Foods;
-
+use Session;
 class AdminController extends Controller
 {
 	public function __construct()
@@ -25,6 +25,7 @@ class AdminController extends Controller
 
     public function orders()
     {
+    
     	return view('Admin.orders');
     }
     public function fooditems()
@@ -63,17 +64,15 @@ class AdminController extends Controller
         $foods->price = $request->input('price');
         $foods->gst = $request->input('gst');
 
-        $foods->image = $request->input('image');
-        if(isset($foods->image) or strlen($foods->image) > 0)
-        {
                 if(Input::hasFile('image'))
                 {
                     $file = Input::file('image');
                     $file->move(public_path().'/uploads/',$file->getClientOriginalName());
                     $url = URL::to("/").'/uploads/'.$file->getClientOriginalName();
+
+                    $foods->image = $url;
                 }
-                $foods->image = $url;
-        }
+                
         $foods->save();
         return redirect('/addfoodpage')->with('response','Food Added Successfully');
     }
@@ -85,51 +84,67 @@ class AdminController extends Controller
 
     }
 
-    public function update_biryani()
+    public function update_biryani(Request $request)
     {
         $this->validate($request,[
 
-            'code' => 'required|unique:foods',
+            'code' => 'required',
             'name' => 'required',
             'description' => 'required',
             'price' => 'required|integer',
             'gst' => 'required|integer',
-        ]);
+            'item_id' => 'required|integer'  ]);
 
 
-        // $updateDetails=array(
-        //                         'island_group_id' => $request->get('island_group_id')
-        //                         'region_id'       => $request->get('region_id')
-        //                     );
+            $foods = new Foods;
+            $item_id = $request->input('item_id');
+            $updateDetails=array(
+                                    'code' => $request->input('code'),
+                                    'name' => $request->input('name'),
+                                    'description' => $request->input('description'),
+                                    'price' => $request->input('price'),
+                                    'gst' => $request->input('gst')
 
-        //                        DB::table('area')
-        //                         ->where('id', $request->get('area_id'))
-        //                         ->update($updateDetails);
+                                );
+
+                                   DB::table('foods')
+                                    ->where('id', $request->input('item_id'))
+                                    ->update($updateDetails);
 
 
+      
 
-
-        $foods = new Foods;
-
-        $foods->code = $request->input('code');
-        $foods->name = $request->input('name');
-        $foods->description = $request->input('description');
-        $foods->price = $request->input('price');
-        $foods->gst = $request->input('gst');
-
-        $foods->image = $request->input('image');
-        if(isset($foods->image) or strlen($foods->image) > 0)
-        {
                 if(Input::hasFile('image'))
                 {
+
                     $file = Input::file('image');
                     $file->move(public_path().'/uploads/',$file->getClientOriginalName());
                     $url = URL::to("/").'/uploads/'.$file->getClientOriginalName();
+
+
+                    $updateDetails=array(
+                                    'image' => $url
+                                  );
+
+                    DB::table('foods')
+                        ->where('id', $request->input('item_id'))
+                        ->update($updateDetails);
+
+                    $foods->image = $url;
                 }
-                $foods->image = $url;
-        }
-        $foods->save();
-        return redirect('/addfoodpage')->with('response','Food Added Successfully');
+          
+        return redirect('/addfoodpage')->with('response','Food Updated Successfully');
+    }
+
+
+    public function delete_food($id)
+    {
+        DB::table('foods')->where('id', $id)->delete();
+       
+        $food = DB::table('foods')->get();
+        return view('Admin.foods',['foods' => $food]);
+
+
     }
 
    

@@ -124,12 +124,10 @@
                          <span style="color: red"><?php //echo form_error('gst');?></span>
                 </div>
               </div>
-
-
-
-	
             </div>
               <!-- /.box-body -->
+
+           <input type="hidden" name="item_id" value="<?php if(isset($v->id)){ echo $v->id; } ?> ">
             <div class="box-footer box-body">    
              <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
                 Update

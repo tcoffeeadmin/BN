@@ -48,7 +48,9 @@
       </span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">
-          <img src="<?php //echo base_url(); ?>images/web_logo.png">
+          <img width="50px" height="50px" src="/images/logo.png">
+
+
       </span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -188,13 +190,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php //echo base_url(); ?>images/profile.png" class="user-image" alt="User Image">
+              <img src="http://127.0.0.1:8000/uploads/PICTC082018013.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php //echo base_url(); ?>images/profile.png" class="img-circle" alt="User Image">
+                <img src="http://127.0.0.1:8000/uploads/PICTC082018013.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer
@@ -222,7 +224,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php //echo base_url(); ?>Admin/index" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
